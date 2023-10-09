@@ -2,6 +2,7 @@
 	import { AppShell, AppBar, LightSwitch } from '@skeletonlabs/skeleton';
 	import 'iconify-icon';
 	import '../app.postcss';
+	import '../i18n';
 </script>
 
 <AppShell>
