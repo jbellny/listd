@@ -2,13 +2,12 @@
 	import { AppShell, AppBar, LightSwitch } from '@skeletonlabs/skeleton';
 	import 'iconify-icon';
 	import '../app.postcss';
-	import '../i18n';
 </script>
 
 <AppShell>
 	<svelte:fragment slot="header">
 		<AppBar shadow="shadow-md">
-			<svelte:fragment slot="lead">listd.tv</svelte:fragment>
+			<svelte:fragment slot="lead"><a href="/">listd.tv</a></svelte:fragment>
 
 			<svelte:fragment slot="trail"><LightSwitch /></svelte:fragment>
 		</AppBar>

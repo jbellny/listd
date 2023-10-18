@@ -1,12 +1,12 @@
 <script lang="ts">
-	import i18next from 'i18next';
-	import i18n from 'i18next';
+	import { LL } from '$lib/i18n/i18n-svelte.js';
 </script>
 
 <div
 	class="card variant-ghost-surface flex flex-col gap-4 p-4 rounded-sm max-w-lg items-center mx-auto"
 >
-	<p>{i18next.t('message')}</p>
+	<!-- <p>{ $LL.message() }</p> -->
+	<p>{$LL.message()}</p>
 	<p>
 		Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt earum enim ipsa odio
 		consequuntur quos architecto, nostrum ducimus. Ratione ex aspernatur quam nisi laborum quibusdam

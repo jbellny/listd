@@ -8,10 +8,16 @@ const en_common = {
 const es_common = {
 	message: 'hola mundo'
 };
+const de_common = {
+	message: 'hallo Welt'
+};
 
 export const defaultNS = 'common';
 
 export const resources = {
+	de: {
+		common: de_common
+	},
 	en: {
 		common: en_common
 	},
@@ -21,7 +27,7 @@ export const resources = {
 } as const;
 
 i18next.init({
-	lng: 'es',
+	lng: 'en',
 	fallbackLng: 'en',
 	debug: true,
 	ns: [defaultNS],
