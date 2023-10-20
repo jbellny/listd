@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
+	import { LL } from '$lib/i18n/i18n-svelte';
 	import { FileButton } from '@skeletonlabs/skeleton';
 	let username: string;
 </script>
 
-<p>
-	Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium dolores quidem amet commodi
-	nostrum odio excepturi accusamus numquam soluta tempora!
+<p class="text-2xl">
+	{$LL.messages.onboarding.main()}
 </p>
 <form
 	method="POST"
@@ -24,8 +24,16 @@
 	}}
 >
 	<label class="py-5 flex flex-col items-start" for="username">
-		<span>Username</span>
+		<span>{$LL.labels.onboarding.username()}</span>
 		<input class="text-black" type="text" bind:value={username} id="username" />
 	</label>
-	<FileButton name="files" button="btn variant-filled-primary">Upload</FileButton>
+	<p class="my-4">{$LL.messages.onboarding.avatar()}</p>
+
+	<FileButton name="files" button="btn variant-filled-primary"
+		>{$LL.labels.onboarding.uploadFile()}</FileButton
+	>
+	<p class="text-center text-2xl mt-10 mb-5">{$LL.messages.onboarding.final()}</p>
+	<div class="flex justify-center">
+		<button class="btn variant-filled-tertiary">{$LL.labels.onboarding.final()}</button>
+	</div>
 </form>

@@ -1,7 +1,8 @@
 import type { Translation } from '../i18n-types';
-
+import en from '../en';
 const es = {
-	// this is an example Translation, just rename or delete this folder if you want
+	...(en as Translation),
+	tagline: 'Bienvenido a listd.tv',
 	message: 'Halo Mundo'
 } satisfies Translation;
 

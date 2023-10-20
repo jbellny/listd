@@ -1,8 +1,9 @@
 import type { Translation } from '../i18n-types';
 import en from '../en';
-const it = {
+
+const ar = {
 	...(en as Translation),
-	message: 'Ciao Mundo'
+	message: 'مرحبا بالعالم'
 } satisfies Translation;
 
-export default it;
+export default ar;

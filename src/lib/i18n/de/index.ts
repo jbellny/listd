@@ -1,7 +1,8 @@
 import type { Translation } from '../i18n-types';
+import en from '../en';
 
 const de = {
-	// this is an example Translation, just rename or delete this folder if you want
+	...(en as Translation),
 	message: 'Hallo Welt'
 } satisfies Translation;
 
