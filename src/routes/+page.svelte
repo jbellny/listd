@@ -1,5 +1,8 @@
 <script lang="ts">
 	import { LL } from '$lib/i18n/i18n-svelte.js';
+	import type { PageData } from './$types';
+	export let data: PageData;
+	console.log(data.users);
 </script>
 
 <div

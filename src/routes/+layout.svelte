@@ -2,6 +2,10 @@
 	import { AppShell, AppBar, LightSwitch } from '@skeletonlabs/skeleton';
 	import 'iconify-icon';
 	import '../app.postcss';
+	import { setLocale } from '$lib/i18n/i18n-svelte';
+	import type { LayoutData } from './$types';
+	export let data: LayoutData;
+	setLocale(data.locale);
 </script>
 
 <AppShell>
