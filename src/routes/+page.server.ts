@@ -1,10 +1,10 @@
-import { PrismaClient } from '@prisma/client';
-import type { PageServerLoad } from './$types';
+import { PrismaClient } from '@prisma/client'
+import type { PageServerLoad } from './$types'
 
-const prismaClient = new PrismaClient();
+const prismaClient = new PrismaClient()
 
 export const load = (async () => {
 	return {
-		users: await prismaClient.user.findMany()
-	};
-}) satisfies PageServerLoad;
+		users: await prismaClient.user.findMany(),
+	}
+}) satisfies PageServerLoad
