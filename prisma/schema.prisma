@@ -1,86 +1,86 @@
 generator client {
-  provider = "prisma-client-js"
+    provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
 }
 
 model User {
-  id String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+    id String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
 
-  username String @unique
+    username String @unique
 
-  createdAt DateTime @default(now())
+    createdAt DateTime @default(now())
 
-  updatedAt DateTime @updatedAt
+    updatedAt DateTime @updatedAt
 
-  Feed Feed[]
+    Feed Feed[]
 }
 
 enum Visibility {
-  Public
-  Unlisted
-  Private
+    Public
+    Unlisted
+    Private
 }
 
 model Feed {
-  id String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+    id String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
 
-  name String
+    name String
 
-  description String?
+    description String?
 
-  visibility Visibility
+    visibility Visibility
 
-  creator User @relation(fields: [userId], references: [id])
+    creator User @relation(fields: [userId], references: [id])
 
-  userId String @db.Uuid
+    userId String @db.Uuid
 
-  items FeedItem[]
+    items FeedItem[]
 
-  createdAt DateTime @default(now())
+    createdAt DateTime @default(now())
 
-  updatedAt DateTime @updatedAt
+    updatedAt DateTime @updatedAt
 }
 
 enum FeedItemType {
-  YouTubeChannel
+    YouTubeChannel
 }
 
 model FeedItem {
-  id Int @id @default(autoincrement())
+    id Int @id @default(autoincrement())
 
-  name String
+    name String
 
-  description String?
+    description String?
 
-  meta FeedItemMeta @relation(fields: [feedItemMetaId], references: [id])
+    meta FeedItemMeta @relation(fields: [feedItemMetaId], references: [id])
 
-  Feed Feed @relation(fields: [feedId], references: [id])
+    feed Feed @relation(fields: [feedId], references: [id])
 
-  feedItemMetaId String @db.Uuid
+    feedItemMetaId String @db.Uuid
 
-  feedId String @db.Uuid
+    feedId String @db.Uuid
 
-  createdAt DateTime @default(now())
+    createdAt DateTime @default(now())
 
-  updatedAt DateTime @updatedAt
+    updatedAt DateTime @updatedAt
 }
 
 model FeedItemMeta {
-  id String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+    id String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
 
-  name String
+    name String
 
-  originId String
+    originId String
 
-  type FeedItemType
+    type FeedItemType
 
-  FeedItem FeedItem[]
+    feedItem FeedItem[]
 
-  createdAt DateTime @default(now())
+    createdAt DateTime @default(now())
 
-  updatedAt DateTime @updatedAt
+    updatedAt DateTime @updatedAt
 }
