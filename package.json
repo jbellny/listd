@@ -48,6 +48,9 @@
     },
     "type": "module",
     "dependencies": {
+        "@auth/core": "^0.18.1",
+        "@auth/prisma-adapter": "^1.0.8",
+        "@auth/sveltekit": "^0.3.12",
         "@prisma/client": "5.4.2",
         "@skeletonlabs/skeleton": "^2.3.0",
         "eslint-config-airbnb-base": "^15.0.0",
